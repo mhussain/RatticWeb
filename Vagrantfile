@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "rattic" do |web|
     config.vm.network :forwarded_port, host: 8080, guest: 80
-    config.vm.network :forwarded_port, host: 8443, guest: 443
+    config.vm.network :forwarded_port, host: 8444, guest: 443
     config.vm.provision :ansible do |ansible|
       ansible.playbook = "docs/ansible/rattic.play"
       ansible.extra_vars = { release: "vagrant" }
